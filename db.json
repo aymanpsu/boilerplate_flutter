@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "GET Request",
+        "path": "getRquest()"
+    },
+    {
+        "id": 2,
+        "name": "POST Request",
+        "path": "postRquest()"
+    },
+    {
+        "id": 3,
+        "name": "POT Request",
+        "path": "potRquest()"
+    },
+    {
+        "id": 4,
+        "name": "DELETE Request",
+        "path": "deleteRquest()"
+    }
+]
