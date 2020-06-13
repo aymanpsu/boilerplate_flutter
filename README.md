@@ -6,7 +6,7 @@ A new Flutter project show all main features you need as a starter flutter proje
 
 * [x] Flutter Router
 * [x] Files Structure
-* [ ] Flutter Theme
+* [x] Flutter Theme
 * [ ] Responsive design & clone dribbble design
 * [ ] CRUD Http
 * [ ] Implement provider state management
