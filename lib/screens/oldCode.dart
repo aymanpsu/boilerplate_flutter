@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import '../screens/addPost.dart';
 import '../screens/postsList.dart';
 import '../models/request_buttons_modal.dart';
+import '../values/app_routes.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key key}) : super(key: key);
+class OldScreen extends StatelessWidget {
+  const OldScreen({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +22,7 @@ class HomePage extends StatelessWidget {
               padding: const EdgeInsets.only(bottom: 10),
               child: RaisedButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => PostsList()),
-                  );
+                  Navigator.pushNamed(context, Router.postListRoute);
                 },
                 child: Text("fetch posts"),
               ),
