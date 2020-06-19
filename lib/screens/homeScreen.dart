@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_http/values/app_colors.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key key}) : super(key: key);
@@ -11,9 +12,9 @@ class HomeScreen extends StatelessWidget {
     var appBar = AppBar(
       backgroundColor: Colors.transparent,
       elevation: 0.0,
-      leading: Icon(
-        Icons.menu,
-        color: Colors.black,
+      leading: Image.asset(
+        "assets/images/menu_icon.png",
+        scale: 2,
       ),
       actions: <Widget>[
         Padding(
@@ -34,12 +35,12 @@ class HomeScreen extends StatelessWidget {
           children: <Widget>[
             Container(
               // color: Colors.red,
-              height: (deviceHeight - appBarHeight - statusBarHeight) * 0.35,
+              height: (deviceHeight - appBarHeight - statusBarHeight) * 0.31,
               width: double.infinity,
               child: Padding(
                 padding: const EdgeInsets.only(
-                  left: 14.0,
-                  right: 14.0,
+                  left: 19.0,
+                  right: 19.0,
                   top: 35,
                 ),
                 child: Column(
@@ -47,7 +48,10 @@ class HomeScreen extends StatelessWidget {
                   children: <Widget>[
                     Text(
                       "Hey Sara,",
-                      style: Theme.of(context).textTheme.headline,
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(
@@ -56,7 +60,11 @@ class HomeScreen extends StatelessWidget {
                       ),
                       child: Text(
                         "Find what you want to learn",
-                        style: Theme.of(context).textTheme.subhead,
+                        style: TextStyle(
+                          fontSize: 26,
+                          fontWeight: FontWeight.w400,
+                          color: AppColors.accentColorText,
+                        ),
                       ),
                     ),
                     TextField(
@@ -65,7 +73,10 @@ class HomeScreen extends StatelessWidget {
                         color: Color(0xFFbdc6cf),
                       ),
                       decoration: const InputDecoration(
-                        // contentPadding: EdgeInsets.only(12),
+                        contentPadding: EdgeInsets.only(
+                          top: 21,
+                          bottom: 21,
+                        ),
                         filled: true,
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.all(
@@ -80,29 +91,151 @@ class HomeScreen extends StatelessWidget {
                             Radius.circular(35),
                           ),
                         ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(35),
+                          ),
+                          borderSide: BorderSide(
+                            color: Colors.black26,
+                          ),
+                        ),
                         labelText: "Search for anything",
-                        prefixIcon: Icon(Icons.search),
+                        labelStyle: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 19,
+                        ),
+                        prefixIcon: Padding(
+                          padding: const EdgeInsets.only(
+                            left: 25,
+                            right: 16,
+                          ),
+                          child: Image(
+                            image: AssetImage("assets/images/search_icon.png"),
+                            width: 25,
+                          ),
+                        ),
                       ),
                     )
                   ],
                 ),
               ),
             ),
-            // Container(
-            //   child: GridView.count(
-            //     crossAxisCount: 10,
-            //     mainAxisSpacing: 10,
-            //     crossAxisSpacing: 2,
-            //     children: <Widget>[
-            //       Container(
-            //         color: Colors.amber,
-            //         child: Row(
-            //           children: <Widget>[Text("data")],
-            //         ),
-            //       )
-            //     ],
-            //   ),
-            // ),
+            Container(
+              height: (deviceHeight - appBarHeight - statusBarHeight) * 0.13,
+              width: double.infinity,
+              // color: Colors.blue,
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  left: 19.0,
+                  right: 19.0,
+                  top: 19,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text(
+                      "Categories",
+                      style: TextStyle(
+                        fontSize: 21,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    Text(
+                      "See All",
+                      style: TextStyle(
+                        fontSize: 19,
+                        fontWeight: FontWeight.w700,
+                        color: AppColors.lightBlue,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  left: 19.0,
+                  right: 19.0,
+                ),
+                child: GridView.count(
+                  primary: false,
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 25,
+                  crossAxisSpacing: 25,
+                  children: <Widget>[
+                    LayoutBuilder(
+                      builder: (context, constraints) {
+                        return Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15.0),
+                            color: Colors.lightGreen,
+                          ),
+                          height: constraints.maxHeight * 0.3,
+                          child: Column(
+                            children: <Widget>[
+                              Text("Marketing"),
+                              Text("5 Courses"),
+                            ],
+                          ),
+                        );
+                      },
+                    ),
+                    LayoutBuilder(
+                      builder: (context, constraints) {
+                        return Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15.0),
+                            color: Colors.lightGreen,
+                          ),
+                          height: constraints.maxHeight * 0.3,
+                          child: Column(
+                            children: <Widget>[
+                              Text("Marketing"),
+                              Text("5 Courses"),
+                            ],
+                          ),
+                        );
+                      },
+                    ),
+                    LayoutBuilder(
+                      builder: (context, constraints) {
+                        return Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15.0),
+                            color: Colors.lightGreen,
+                          ),
+                          height: constraints.maxHeight * 0.3,
+                          child: Column(
+                            children: <Widget>[
+                              Text("Marketing"),
+                              Text("5 Courses"),
+                            ],
+                          ),
+                        );
+                      },
+                    ),
+                    LayoutBuilder(
+                      builder: (context, constraints) {
+                        return Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15.0),
+                            color: Colors.lightGreen,
+                          ),
+                          height: constraints.maxHeight * 0.3,
+                          child: Column(
+                            children: <Widget>[
+                              Text("Marketing"),
+                              Text("5 Courses"),
+                            ],
+                          ),
+                        );
+                      },
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
